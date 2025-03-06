@@ -9,7 +9,7 @@ const path = require('path');
 const port = process.env.PORT || 5000; 
 
 const corsOptions = {
-  origin: 'https://your-netlify-app.netlify.app',  // Schimbă cu URL-ul tău de pe Netlify
+  origin: 'https://anime-fox.netlify.app/',  
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
