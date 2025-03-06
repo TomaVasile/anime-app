@@ -1,0 +1,79 @@
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative; 
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  vertical-align: middle;
+}
+
+.user-icon:hover {
+  transform: scale(1.1);
+}
+
+.user-dropdown {
+  align-items: center;
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 3.05em; 
+  right: 0;
+  background: linear-gradient(45deg, #1a1a1a, #1e1e2f);
+  color: #fff;
+  border-radius: 8px;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  visibility: hidden;
+}
+
+.user-dropdown .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background-color: rgba(255, 77, 77, 0.2);
+}

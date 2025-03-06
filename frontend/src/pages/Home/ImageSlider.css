@@ -1,0 +1,106 @@
+.image-slider {
+    margin-top: 30px;
+    background: transparent;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: top center;
+    overflow: hidden;
+    transition: background-image 1s ease;
+  }
+
+  .title-image {
+    width: 30em;
+    position: absolute;
+    top: 8em; 
+    left: 14%;
+    transform: translateX(-50%);
+    max-width: 100%;
+  }
+  
+  .title-img {
+    width: 100%; 
+    height: auto;
+    object-fit: cover; 
+  }
+
+  .title-img-0 {
+    position: absolute;
+  }
+
+  .title-img-1 {
+    position: absolute;
+    right: 1em;
+  }
+
+  .title-img-2 {
+    position: absolute;
+    left: 2em;
+  }
+
+  .title-img-3 {
+    position: absolute;
+    right: 2em;
+  }
+
+  .description-slider {
+    position: absolute;
+    top: 60%; 
+    left: 15em;
+    transform: translate(-50%, -50%); 
+    color: #fff;
+    padding: 0 50px;
+    max-width: 500px; 
+    text-align: center; 
+    line-height: 1.5;
+  }
+  
+  .description-animes {
+    font-size: 1.2rem; 
+    line-height: 1.5;
+    max-width: 90%;
+  }
+  
+  @media (max-width: 768px) {
+    .title-img {
+      width: 50%; 
+    }
+
+    .description-slider {
+      top: 85%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 90%; 
+      padding: 0 20px; 
+    }
+
+    .title-img-0 {
+      position: absolute;
+      top: 18em;
+      left: 11em;
+    }
+  
+    .title-img-1 {
+      position: absolute;
+      top: 15em;
+      right: 3em;
+    }
+  
+    .title-img-2 {
+      position: absolute;
+      top: 17em;
+      left: 13em;
+    }
+  
+    .title-img-3 {
+      position: absolute;
+      top: 16em;
+      right: 5em;
+    }
+    
+    .description-animes {
+      font-size: 1rem; 
+    }
+  }
+  

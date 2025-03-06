@@ -1,0 +1,238 @@
+[
+  {
+    "id": 1,
+    "title": "Naruto",
+    "genre": "Action",
+    "description": "A young ninja seeks recognition from his peers and dreams of becoming the Hokage, the village leader.",
+    "imageUrl": "api-images/naruto.jpg",
+    "url": "naruto"
+  },
+  {
+    "id": 2,
+    "title": "One Piece",
+    "genre": "Adventure",
+    "description": "A young pirate named Luffy and his crew search for the ultimate treasure known as One Piece.",
+    "imageUrl": "/api-images/one-piece.jpg",
+    "url": "one-piece"
+  },
+  {
+    "id": 3,
+    "title": "Attack on Titan",
+    "genre": "Fantasy",
+    "description": "Humanity fights for survival against giant humanoid creatures known as Titans.",
+    "imageUrl": "/api-images/attack-on-titan.jpg",
+    "url": "attack-on-titan"
+  },
+  {
+    "id": 4,
+    "title": "Death Note",
+    "genre": "Thriller",
+    "description": "A high school student discovers a notebook that allows him to kill anyone by writing their name in it.",
+    "imageUrl": "/api-images/death-note.jpg",
+    "url": "death-note"
+  },
+  {
+    "id": 5,
+    "title": "My Hero Academia",
+    "genre": "Action",
+    "description": "In a world where most people have superpowers, a boy without them strives to become a hero.",
+    "imageUrl": "/api-images/my-hero-academia.jpg",
+    "url": "my-hero-academia"
+  },
+  {
+    "id": 6,
+    "title": "Sword Art Online",
+    "genre": "Sci-Fi",
+    "description": "Players of a virtual reality MMORPG find themselves trapped in the game and must fight to survive.",
+    "imageUrl": "/api-images/sword-art-online.jpg",
+    "url": "sword-art-online"
+  },
+  {
+    "id": 7,
+    "title": "Cowboy Bebop",
+    "genre": "Sci-Fi",
+    "description": "A group of bounty hunters travels through space in their quest to capture the galaxy's most wanted criminals.",
+    "imageUrl": "/api-images/cowboy-bebop.jpg",
+    "url": "cowboy-bebop"
+  },
+  {
+    "id": 8,
+    "title": "One Punch Man",
+    "genre": "Action",
+    "description": "A superhero who can defeat any opponent with a single punch struggles with boredom and finding a worthy fight.",
+    "imageUrl": "/api-images/one-punch-man.jpg",
+    "url": "one-punch-man"
+  },
+  {
+    "id": 9,
+    "title": "Dragon Ball Z",
+    "genre": "Action",
+    "description": "The adventures of Goku as he defends Earth from powerful foes while searching for the Dragon Balls.",
+    "imageUrl": "/api-images/dragon-ball-z.jpg",
+    "url": "dragon-ball-z"
+  },
+  {
+    "id": 10,
+    "title": "Neon Genesis Evangelion",
+    "genre": "Mecha",
+    "description": "Teenagers pilot giant mechs to protect Earth from mysterious beings known as Angels.",
+    "imageUrl": "/api-images/evangelion.jpg",
+    "url": "neon-genesis-evangelion"
+  },
+  {
+    "id": 11,
+    "title": "Tokyo Ghoul",
+    "genre": "Horror",
+    "description": "A college student becomes a half-ghoul after a horrific encounter and must navigate his new life.",
+    "imageUrl": "/api-images/tokyo-ghoul.jpg",
+    "url": "tokyo-ghoul"
+  },
+  {
+    "id": 12,
+    "title": "Steins;Gate",
+    "genre": "Sci-Fi",
+    "description": "A group of friends accidentally discovers time travel and must deal with the consequences.",
+    "imageUrl": "/api-images/steins-gate.jpg",
+    "url": "steins-gate"
+  },
+  {
+    "id": 13,
+    "title": "Hunter x Hunter",
+    "genre": "Adventure",
+    "description": "A young boy becomes a Hunter to find his father, who is also a legendary Hunter.",
+    "imageUrl": "/api-images/hunter-x-hunter.jpg",
+    "url": "hunter-x-hunter"
+  },
+  {
+    "id": 14,
+    "title": "Demon Slayer: Kimetsu no Yaiba",
+    "genre": "Action",
+    "description": "A young boy becomes a demon slayer to avenge his family and cure his demon-turned sister.",
+    "imageUrl": "/api-images/demon-slayer.jpg",
+    "url": "demon-slayer"
+  },
+  {
+    "id": 15,
+    "title": "Hellsing",
+    "genre": "Action",
+    "description": "An organization dedicated to protecting England from supernatural threats is led by an immortal vampire.",
+    "imageUrl": "/api-images/hellsing.jpg",
+    "url": "hellsing"
+  },
+  {
+    "id": 16,
+    "title": "Code Geass: Lelouch of the Rebellion",
+    "genre": "Mecha",
+    "description": "A young man gains the power to command anyone and uses it to fight against an oppressive empire.",
+    "imageUrl": "/api-images/code-geass.jpg",
+    "url": "code-geass"
+  },
+  {
+    "id": 17,
+    "title": "Mob Psycho 100",
+    "genre": "Action",
+    "description": "A young psychic with immense power struggles with his emotions and the challenges of adolescence.",
+    "imageUrl": "/api-images/mob-psycho.jpg",
+    "url": "mob-psycho"
+  },
+  {
+    "id": 18,
+    "title": "Re:Zero - Starting Life in Another World",
+    "genre": "Fantasy",
+    "description": "A young man is transported to another world where he discovers he can return to life upon death.",
+    "imageUrl": "/api-images/re-zero.jpg",
+    "url": "re-zero"
+  },
+  {
+    "id": 19,
+    "title": "Gintama",
+    "genre": "Comedy",
+    "description": "Set in an alternate-history Edo period where aliens have invaded Japan, this series follows the adventures of Gintoki Sakata, a freelancer.",
+    "imageUrl": "/api-images/gintama.jpg",
+    "url": "gintama"
+  },
+  {
+    "id": 20,
+    "title": "Black Clover",
+    "genre": "Action",
+    "description": "Two orphans, Asta and Yuno, aim to become the Wizard King in a world where magic is everything.",
+    "imageUrl": "/api-images/black-clover.jpg",
+    "url": "black-clover"
+  },
+  {
+    "id": 21,
+    "title": "JoJo's Bizarre Adventure",
+    "genre": "Action",
+    "description": "The Joestar family is cursed to fight supernatural forces across generations in this action-packed series.",
+    "imageUrl": "/api-images/jojo.jpg",
+    "url": "jojo"
+  },
+  {
+    "id": 22,
+    "title": "Kakegurui",
+    "genre": "Drama",
+    "description": "In a high-stakes gambling academy, a new transfer student shakes things up with her incredible gambling skills.",
+    "imageUrl": "/api-images/kakegurui.jpg",
+    "url": "kakegurui"
+  },
+  {
+    "id": 23,
+    "title": "Toradora!",
+    "genre": "Romance",
+    "description": "A high school romance between two students with difficult personalities and a shared goal to help each other with their crushes.",
+    "imageUrl": "/api-images/toradora.jpg",
+    "url": "toradora"
+  },
+  {
+    "id": 24,
+    "title": "Clannad",
+    "genre": "Drama",
+    "description": "A touching story about a troubled high school student and the impact he has on those around him.",
+    "imageUrl": "/api-images/clannad.jpg",
+    "url": "clannad"
+  },
+  {
+    "id": 25,
+    "title": "Made in Abyss",
+    "genre": "Adventure",
+    "description": "A young girl and a robot descend into a mysterious abyss to find her mother, facing many dangers along the way.",
+    "imageUrl": "/api-images/made-in-abyss.jpg",
+    "url": "made-in-abyss"
+  },
+  {
+    "id": 26,
+    "title": "No Game No Life",
+    "genre": "Fantasy",
+    "description": "A brother and sister duo are transported to a world where everything is decided by games and aim to defeat the mysterious beings ruling the world.",
+    "imageUrl": "/api-images/no-game-no-life.jpg",
+    "url": "no-game-no-life"
+  },
+  {
+    "id": 27,
+    "title": "Angel Beats!",
+    "genre": "Action",
+    "description": "In a purgatory-like afterlife, a group of deceased students fights against a mysterious girl with supernatural powers.",
+    "imageUrl": "/api-images/angel-beats.jpg",
+    "url": "angel-beats"
+  },
+  {
+    "id": 28,
+    "title": "The Promised Neverland",
+    "genre": "Thriller",
+    "description": "Children in an orphanage discover the dark truth about their seemingly perfect life and must plan their escape.",
+    "imageUrl": "/api-images/the-promised-neverland.jpg",
+    "url": "the-promised-neverland"
+  },
+  {
+    "id": 29,
+    "title": "Naruto Shippuden",
+    "genre": "Action",
+    "description": "The sequel to Naruto, following the adventures of Naruto Uzumaki as he continues his journey to become the Hokage and protect his friends.",
+    "imageUrl": "/api-images/naruto-shippuden.jpg",
+    "url": "naruto-shippuden"
+  }
+]
+
+
+
+

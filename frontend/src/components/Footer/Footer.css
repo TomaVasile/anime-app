@@ -1,0 +1,30 @@
+.footer {
+    background: transparent;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-links a,
+  .footer-social-media a {
+    color: rgb(197, 191, 191);
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .footer-links a:hover,
+  .footer-social-media a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-copyright {
+    margin-top: 20px;
+    font-size: 0.9em;
+  }
+  

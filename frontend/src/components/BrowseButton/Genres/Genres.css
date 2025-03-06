@@ -1,0 +1,33 @@
+.genres-container {
+    margin-top: 1rem;
+  }
+  
+  .genres-paragraph {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .genres-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .genre-item {
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff5733;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .genre-item:hover {
+    color: #ff5733;
+    background-color: #fff;
+  }
+  

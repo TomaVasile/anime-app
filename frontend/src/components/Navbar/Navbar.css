@@ -1,0 +1,136 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  padding: 20px;
+  z-index: 99;
+  height: 3.6em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transition: background 0.3s ease;
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 0; 
+  margin: 0;
+  display: inline; 
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: rgba(255, 255, 255, 0.8); 
+}
+
+.navbar-left {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 1.2rem;
+  flex: 1;
+}
+
+.navbar-link + .navbar-link {
+  margin-left: 15px; 
+}
+
+.logo {
+  width: 6em;
+  transition: opacity 0.3s ease;
+}
+
+.btn-input:hover {
+  background: transparent;
+  opacity: 1;
+}
+
+.btn-input:focus {
+  outline: none;
+}
+
+.navbar-toggle {
+  background: none;
+  border: none;
+  font-size: 25px;
+  color: #e4dede;
+  cursor: pointer;
+  display: block;
+}
+
+.login-icon {
+  position: relative;
+  right: 1em;
+}
+
+.div-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  padding-right: 5em;
+}
+
+.div-input .search-input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1rem;
+  border: none;
+  background-color: transparent;
+  color: #e0e0e0;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+  border-radius: 0;
+
+  background-image: linear-gradient(
+    to right, 
+    transparent 0%,          
+    #FF6A00 15%,                
+    #FF6A00 calc(50% - 10px),  
+    #FF6A00 calc(50% + 10px), 
+    #FF6A00 70%,               
+    transparent 90%            
+);
+background-position: bottom;
+background-size: 100% 3px;
+background-repeat: no-repeat;
+}
+
+.div-input .text-search {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  font-size: 1.3rem;
+  color: #cfcfcf;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 1;
+  font-family: 'Arial', sans-serif;
+}
+
+.div-input .search-input:focus + .text-search,
+.div-input .text-search.active {
+  left: 50px;
+  color: #FF6A00;
+}
+
+.div-input .search-input:focus + .text-search,
+.div-input .text-search.active {
+  opacity: 0;
+}
+
+.div-input .search-input:placeholder-shown + .text-search {
+  top: -2px;
+  font-size: 1.2rem;
+  color: #FF6A00;
+}
+
+.navbar-right {
+  position: relative;
+  right: 3em;
+}

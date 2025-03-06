@@ -1,0 +1,18 @@
+.login-icon {
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+
+.login-icon:hover {
+    transform: scale(1.05); 
+    opacity: 0.9; 
+}
+
+.icon-circle {
+    fill: none;
+    stroke: #ffffff;
+    stroke-miterlimit: 10;
+    stroke-width: 1.91px;
+}

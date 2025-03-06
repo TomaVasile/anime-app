@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+::-webkit-scrollbar {
+  z-index: 1000;
+  width: 17px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  z-index: 1000;
+  background: #000; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 10px;
+  border: 2px solid #333; 
+  z-index: 1000;
+}
+
+.App {
+  background: linear-gradient(#000000 80%, #1e1e2f);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  background: transparent;
+}
+
