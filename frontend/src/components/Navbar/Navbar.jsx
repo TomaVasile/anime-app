@@ -48,25 +48,24 @@ const Navbar = () => {
   const closeModal = () => setIsModalOpen(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen); 
 
-  const debounce = (func, delay) => {
-    let debounceTimer;
-    return (...args) => {
-      clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(() => func(...args), delay);
-    };
-  };
-
-  const performSearch = (query) => {
+  const performSearch = useCallback((query) => {
     if (query) {
       navigate(`/anime?title=${encodeURIComponent(query)}`);
     } else {
       navigate('/');
     }
-  };
+  }, [navigate]);
 
-  const handleSearchChange = useCallback(debounce((query) => {
-    performSearch(query);
-  }, 300), []); 
+  const handleSearchChange = useCallback(
+    (query) => {
+      const debounceTimer = setTimeout(() => {
+        performSearch(query);
+      }, 300);
+
+      return () => clearTimeout(debounceTimer);
+    },
+    [performSearch] 
+  );
 
   const handleInputFocus = () => setIsLabelActive(true);
   const handleInputBlur = () => {
