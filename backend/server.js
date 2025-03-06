@@ -8,11 +8,12 @@ const app = express();
 const path = require('path');
 const port = process.env.PORT || 5000; 
 
-app.use(cors({
-  origin: 'http://localhost:3000', 
-  methods: ['GET', 'POST', 'DELETE', 'PUT'],
+const corsOptions = {
+  origin: 'https://your-netlify-app.netlify.app',  // Schimbă cu URL-ul tău de pe Netlify
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-}));
+};
+app.options('*', cors(corsOptions));
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
