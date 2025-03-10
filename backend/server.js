@@ -33,8 +33,8 @@ app.use('/api', protectedRoutes);
 const paymentRoutes = require('./routes/paymentRoutes');
 app.use('/api', paymentRoutes);
 
-const stripeWebhook = require('./routes/stripeWebhook');
-app.use('/api', stripeWebhook);
+const stripeWebHook = require('./routes/stripeWebHook');
+app.use('/api', stripeWebHook);
 
 mongoose.connect('mongodb://localhost:27017/animeDB')
   .then(() => console.log('Successful connection to MongoDB'))
