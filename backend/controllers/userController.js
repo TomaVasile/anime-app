@@ -93,8 +93,8 @@ const getUserProfile = async (req, res) => {
     }
 
     const avatarUrl = user.avatar
-  ? `http://localhost:3000/user-avatar/${user.avatar}`
-  : "http://localhost:3000/user-avatar/avatar.jpg"; 
+  ? `https://anime-fox.netlify.app/user-avatar/${user.avatar}`
+  : "https://anime-fox.netlify.app/user-avatar/avatar.jpg"; 
   
     res.json({
       userId: user._id,

@@ -14,8 +14,8 @@ const createCheckoutSession = async (req, res) => {
         quantity: 1,
       }],
       mode: 'subscription',
-      success_url: `http://localhost:3000/`,
-      cancel_url: `http://localhost:${process.env.PORT}/cancel`,
+      success_url: `https://anime-fox.netlify.app/`,
+      cancel_url: `https://anime-fox.netlify.app/cancel`,
       metadata: { userId: userId },
     });
 
