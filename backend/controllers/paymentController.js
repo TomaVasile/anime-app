@@ -80,13 +80,26 @@ const handleStripeWebhook = (req, res) => {
 
     console.log(`User ID extracted from metadata: ${userId}`);
 
-    User.findByIdAndUpdate(userId, {
-      accountType: 'premium',
-    }, { new: true }, (err, updatedUser) => {
-      if (err) {
-        console.error('Eroare la actualizarea utilizatorului:', err);
-      } else {
-        console.log(`Utilizatorul cu ID ${updatedUser._id} a fost actualizat la premium.`);
+    User.findById(userId, async (err, user) => {
+      if (err || !user) {
+        console.error('Utilizatorul nu a fost găsit în baza de date:', err);
+        return res.status(404).send('User not found');
+      }
+
+      // Dacă utilizatorul este deja premium, nu mai actualiza contul
+      if (user.accountType === 'premium') {
+        console.log('Contul este deja premium');
+        return res.status(200).send('User is already premium');
+      }
+
+      // Actualizează contul utilizatorului la premium
+      try {
+        user.accountType = 'premium';
+        await user.save();
+        console.log(`Contul utilizatorului ${user._id} a fost actualizat la premium.`);
+      } catch (error) {
+        console.error('Eroare la actualizarea contului utilizatorului:', error);
+        return res.status(500).send('Error updating user account');
       }
     });
   }
