@@ -1,6 +1,7 @@
 require('dotenv').config(); 
 const express = require('express');
 const mongoose = require('mongoose');
+const MONGO_URI = process.env.MONGO_URI;
 const cors = require('cors'); 
 const bodyParser = require('body-parser');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
@@ -36,9 +37,12 @@ app.use('/api', paymentRoutes);
 const stripeWebHook = require('./routes/stripeWebHook');
 app.use('/api', stripeWebHook);
 
-mongoose.connect('mongodb://localhost:27017/animeDB')
-  .then(() => console.log('Successful connection to MongoDB'))
-  .catch((error) => console.log('Connection error MongoDB:', error));
+mongoose.connect(MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log("✅ Conectat la MongoDB Atlas"))
+.catch(err => console.error("❌ Eroare la conectare:", err));
 
 app.listen(PORT, () => {
   console.log(`Serverul rulează pe ${PORT}`);
