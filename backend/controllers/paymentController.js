@@ -14,7 +14,7 @@ const createCheckoutSession = async (req, res) => {
         quantity: 1,
       }],
       mode: 'subscription',
-      success_url: `https://anime-fox.netlify.app/`,
+      success_url: `https://anime-fox.netlify.app/success`,
       cancel_url: `https://anime-fox.netlify.app/cancel`,
       metadata: { userId: userId },
     });
@@ -67,7 +67,7 @@ const handleStripeWebhook = (req, res) => {
   let event;
 
   try {
-    event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
+    event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_ENDPOINT_SECRET);
     console.log('Webhook received:', event);
   } catch (err) {
     console.error(`⚠️ Webhook signature verification failed: ${err.message}`);
@@ -86,13 +86,11 @@ const handleStripeWebhook = (req, res) => {
         return res.status(404).send('User not found');
       }
 
-      // Dacă utilizatorul este deja premium, nu mai actualiza contul
       if (user.accountType === 'premium') {
         console.log('Contul este deja premium');
         return res.status(200).send('User is already premium');
       }
 
-      // Actualizează contul utilizatorului la premium
       try {
         user.accountType = 'premium';
         await user.save();

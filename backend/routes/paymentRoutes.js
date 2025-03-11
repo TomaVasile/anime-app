@@ -17,7 +17,7 @@ router.post('/create-checkout-session', authenticateToken, async (req, res) => {
         quantity: 1,
       }],
       mode: 'subscription',
-      success_url: `https://anime-fox.netlify.app/`,
+      success_url: `https://anime-fox.netlify.app/success`,
       cancel_url: `https://anime-fox.netlify.app/cancel`,
       metadata: { userId },
     });
