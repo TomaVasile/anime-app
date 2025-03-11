@@ -117,7 +117,7 @@ function Anime() {
           <div className="anime-images">
             {anime.image && (
               <img
-                src={`https://anime-fox.netlify.app/api-images/${anime.image}`} 
+                src={`https://anime-fox.netlify.app${anime.image}`} 
                 alt={anime.title || 'Unknown Title'}
                 className="anime-image new-image"
               />
@@ -125,7 +125,7 @@ function Anime() {
             
             {anime.imageUrl && !anime.image && (
               <img
-                src={`https://anime-fox.netlify.app/api-images/${anime.imageUrl}`} 
+                src={`https://anime-fox.netlify.app${anime.imageUrl}`} 
                 alt={anime.title || 'Unknown Title'}
                 className="anime-image old-image"
               />
