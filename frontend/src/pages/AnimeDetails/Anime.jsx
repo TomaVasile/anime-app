@@ -18,7 +18,7 @@ function Anime() {
   useEffect(() => {
     const fetchAnime = async () => {
       try {
-        let url = 'https://anime-app-backend.onrender.com/api/anime';
+        let url = 'https://anime-app-bkmg.onrender.com/api/anime';
         const params = [];
 
         if (genre) params.push(`genre=${genre}`);
@@ -61,7 +61,7 @@ function Anime() {
         return;
       }
 
-      const response = await fetch(`https://anime-app-backend.onrender.com/api/anime/${id}`, {
+      const response = await fetch(`https://anime-app-bkmg.onrender.com/api/anime/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`, 
