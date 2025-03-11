@@ -13,13 +13,12 @@ function Anime() {
   const location = useLocation(); 
   const queryParams = new URLSearchParams(location.search); 
   const title = queryParams.get('title'); 
-  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
   const { isAdmin } = useUser(); 
 
   useEffect(() => {
     const fetchAnime = async () => {
       try {
-        let url = `${API_URL}/api/anime`;
+        let url = 'https://anime-app-backend.onrender.com/api/anime';
         const params = [];
 
         if (genre) params.push(`genre=${genre}`);
@@ -62,7 +61,7 @@ function Anime() {
         return;
       }
 
-      const response = await fetch(`http://localhost:5000/api/anime/${id}`, {
+      const response = await fetch(`https://anime-app-backend.onrender.com/api/anime/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`, 
