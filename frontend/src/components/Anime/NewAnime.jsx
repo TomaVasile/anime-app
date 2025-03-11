@@ -46,7 +46,7 @@ const NewAnime = () => {
   useEffect(() => {
     const fetchAnimeData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/anime'); 
+        const response = await fetch('https://anime-app-backend.onrender.com/api/anime'); 
         if (!response.ok) {
           throw new Error('Failed to fetch anime list');
         }
