@@ -13,12 +13,13 @@ function Anime() {
   const location = useLocation(); 
   const queryParams = new URLSearchParams(location.search); 
   const title = queryParams.get('title'); 
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
   const { isAdmin } = useUser(); 
 
   useEffect(() => {
     const fetchAnime = async () => {
       try {
-        let url = 'http://localhost:5000/api/anime';
+        let url = `${API_URL}/api/anime`;
         const params = [];
 
         if (genre) params.push(`genre=${genre}`);
@@ -117,7 +118,7 @@ function Anime() {
           <div className="anime-images">
             {anime.image && (
               <img
-                src={`http://localhost:5000${anime.image}`} 
+                src={`https://anime-fox.netlify.app/api-images/${anime.image}`} 
                 alt={anime.title || 'Unknown Title'}
                 className="anime-image new-image"
               />
@@ -125,7 +126,7 @@ function Anime() {
             
             {anime.imageUrl && !anime.image && (
               <img
-                src={`http://localhost:5000${anime.imageUrl}`} 
+                src={`https://anime-fox.netlify.app/api-images/${anime.imageUrl}`} 
                 alt={anime.title || 'Unknown Title'}
                 className="anime-image old-image"
               />
