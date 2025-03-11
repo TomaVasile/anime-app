@@ -25,7 +25,7 @@ const UserMenu = () => {
       if (!userId) return;
 
       try {
-        const response = await fetch(`http://localhost:5000/api/user/${userId}`);
+        const response = await fetch(`https://anime-app-bkmg.onrender.com/api/user/${userId}`);
         if (!response.ok) throw new Error("Failed to fetch avatar");
 
         const data = await response.json();

@@ -45,7 +45,7 @@ function AddAnime() {
     setIsSubmitting(true); 
 
     try {
-      const response = await fetch('http://localhost:5000/api/add-anime', {
+      const response = await fetch('https://anime-app-bkmg.onrender.com/api/add-anime', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

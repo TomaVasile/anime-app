@@ -10,7 +10,7 @@ const Genres = ({ onGenreClick }) => {
   useEffect(() => {
     const fetchGenres = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/genres');
+        const response = await fetch('https://anime-app-bkmg.onrender.com/api/genres');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }

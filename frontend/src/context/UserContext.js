@@ -13,7 +13,7 @@ export const UserProvider = ({ children }) => {
     if (token) {
       const fetchUserStatus = async () => {
         try {
-          const response = await fetch('http://localhost:5000/api/protected', {
+          const response = await fetch('https://anime-app-bkmg.onrender.com/api/protected', {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`,

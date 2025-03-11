@@ -12,7 +12,7 @@ function AnimeView() {
   useEffect(() => {
     const fetchAnime = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/${id}/${url}`);
+        const response = await fetch(`https://anime-app-bkmg.onrender.com/api/${id}/${url}`);
         if (!response.ok) throw new Error('Anime not found or network error');
         const data = await response.json();
         setAnime(data);
@@ -27,7 +27,7 @@ function AnimeView() {
       const token = localStorage.getItem('token');
       if (token) {
         try {
-          const response = await fetch('http://localhost:5000/api/protected', {
+          const response = await fetch('https://anime-app-bkmg.onrender.com/api/protected', {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`,

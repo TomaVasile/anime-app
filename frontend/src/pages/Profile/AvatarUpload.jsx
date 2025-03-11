@@ -83,7 +83,7 @@ function AvatarUpload({ currentAvatar, onAvatarChange }) {
     formData.append('avatar', avatar, `avatar_${userId}.jpg`);
 
     try {
-      const response = await fetch('http://localhost:5000/api/user-avatar', {
+      const response = await fetch('https://anime-app-bkmg.onrender.com/api/user-avatar', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
