@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import UpgradeUser from './UpgradeUser';
+import UpgradeUser from '../../services/UpgradeUser';
 import AvatarUpload from './AvatarUpload';
 import './UserSettings.css';
 
