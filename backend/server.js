@@ -32,7 +32,7 @@ const protectedRoutes = require('./routes/protectedRoutes');
 app.use('/api', protectedRoutes);
 
 const stripeRoutes = require('./routes/stripeRoutes');
-app.use('/api/stripe', stripeRoutes);
+app.use('/api', stripeRoutes);
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
