@@ -22,8 +22,8 @@ const UpgradeUser = () => {
       setErrorMessage('Eroare: ID-ul utilizatorului nu este disponibil.');
       return;
     }
-
-    const priceId = 'price_1QIEroAY5agvoB6aa08Qww1q'; 
+    
+    const priceId = 'price_1R1rsKAY5agvoB6asW45NhZ6'; 
 
     setLoading(true);
     setErrorMessage('');
