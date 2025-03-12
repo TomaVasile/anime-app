@@ -102,9 +102,6 @@ function UserSettings() {
             {activeSection === 'Membership' && (
               <div className='form-membership'>
                 <h3>Membership</h3>
-                <p>Details about your membership status:</p>
-                <p>Premium Plan: Active</p>
-                <p>Expiration Date: 12/12/2025</p>
                 <UpgradeUser />
               </div>
             )}
