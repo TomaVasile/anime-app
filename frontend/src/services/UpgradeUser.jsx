@@ -51,10 +51,10 @@ const UpgradeUser = () => {
       const session = await response.json();
       console.log('Răspunsul de la server:', session);
 
-      if (session.id) {
+      if (session.sessionId) {
         const stripe = await stripePromise;
         const { error } = await stripe.redirectToCheckout({
-          sessionId: session.id,
+          sessionId: session.sessionId,
         });
 
         if (error) {
