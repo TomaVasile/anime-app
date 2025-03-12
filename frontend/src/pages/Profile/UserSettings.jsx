@@ -36,7 +36,7 @@ function UserSettings() {
     setErrorMessage('');
 
     try {
-      const response = await fetch('https://anime-app-bkmg.onrender.com/api/create-checkout-session', {
+      const response = await fetch('https://anime-app-bkmg.onrender.com/api/stripe/create-checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
