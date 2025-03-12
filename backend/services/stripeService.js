@@ -8,7 +8,7 @@ const createSession = async (userId, priceId) => {
             mode: 'subscription', 
             customer_email: await getUserEmail(userId),
             line_items: [{ price: priceId, quantity: 1 }],
-            success_url: `https://anime-fox.netlify.app/success?session_id={CHECKOUT_SESSION_ID}`,
+            success_url: `https://anime-fox.netlify.app/`,
             cancel_url: `https://anime-fox.netlify.app/cancel`,
             metadata: { userId }, 
         });

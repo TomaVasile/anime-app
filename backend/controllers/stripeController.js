@@ -19,7 +19,7 @@ const webhookHandler = async (req, res) => {
     const sig = req.headers['stripe-signature'];
 
     try {
-        const event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
+        const event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_ENDPOINT_SECRET);
         await processWebhook(event);
         res.json({ received: true });
     } catch (error) {
