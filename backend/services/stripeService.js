@@ -34,6 +34,8 @@ const processWebhook = async (event) => {
                 await User.findByIdAndUpdate(userId, { accountType: 'premium' });
                 console.log(`Utilizatorul ${userId} a fost promovat la premium.`);
             }
+        } else {
+            console.log(`Evenimentul Stripe necunoscut: ${event.type}`);
         }
     } catch (error) {
         console.error('Eroare la procesarea webhook-ului:', error.message);
