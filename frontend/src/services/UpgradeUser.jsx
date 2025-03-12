@@ -18,13 +18,18 @@ const UpgradeUser = () => {
 
     const userId = localStorage.getItem('userId'); 
 
+    if (!userId) {
+      setErrorMessage('Eroare: ID-ul utilizatorului nu este disponibil.');
+      return;
+    }
+
     const priceId = 'price_1QIEroAY5agvoB6aa08Qww1q'; 
 
     setLoading(true);
     setErrorMessage('');
 
     try {
-      const response = await fetch('https://anime-fox.netlify.app/.netlify/functions/create-checkout-session', {
+      const response = await fetch('https://anime-fox-backend.onrender.com/api/stripe/create-checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
