@@ -33,12 +33,12 @@ const UpgradeUser = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`, 
+          'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify({
           priceId,
-          userId 
-        }),        
+          userId
+        }),
       });
 
       if (!response.ok) {
@@ -75,7 +75,7 @@ const UpgradeUser = () => {
 
   return (
     <div>
-      <h1>Checkout</h1>
+      <h1>Upgrade la Premium</h1>
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
       <CheckoutButton onClick={handleCheckout} loading={loading} />
       <p>Dacă nu ești logat, tranzacția nu va fi procesată.</p>

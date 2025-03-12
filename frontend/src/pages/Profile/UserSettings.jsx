@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { loadStripe } from '@stripe/stripe-js';
-import CheckoutButton from '../../services/CheckoutButton';
+import UpgradeUser from './UpgradeUser';
 import AvatarUpload from './AvatarUpload';
 import './UserSettings.css';
 
@@ -16,71 +15,6 @@ function UserSettings() {
   const [password, setPassword] = useState('');
   const [currentPassword, setCurrentPassword] = useState('');
   const [newUsername, setNewUsername] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
-  const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
-
-  const handleCheckout = async () => {
-    const token = localStorage.getItem('token');
-
-    if (!token) {
-      window.location.href = '/login';
-      return;
-    }
-
-    const userId = localStorage.getItem('userId'); 
-
-    const priceId = 'price_1QIEroAY5agvoB6aa08Qww1q'; 
-
-    setLoading(true);
-    setErrorMessage('');
-
-    try {
-      const response = await fetch('https://anime-app-bkmg.onrender.com/api/stripe/create-checkout-session', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          priceId,
-          metadata: {
-            userId: userId,
-          },
-        }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        setErrorMessage('Eroare la crearea sesiunii de checkout. Te rugăm să încerci din nou.');
-        console.error('Eroare de la server:', errorData);
-        return;
-      }
-
-      const session = await response.json();
-      console.log('Răspunsul de la server:', session);
-
-      if (session.id) {
-        const stripe = await stripePromise;
-        const { error } = await stripe.redirectToCheckout({
-          sessionId: session.id,
-        });
-
-        if (error) {
-          console.error('Eroare la redirecționare către checkout:', error);
-          setErrorMessage('Eroare la redirecționare către checkout. Te rugăm să încerci din nou.');
-        }
-      } else {
-        setErrorMessage('Nu s-a primit un sessionId valid de la server.');
-        console.error('Nu s-a primit un sessionId valid de la server.');
-      }
-    } catch (error) {
-      console.error('Eroare în timpul procesării checkout-ului:', error);
-      setErrorMessage('A apărut o eroare în timpul procesării checkout-ului. Te rugăm să încerci din nou.');
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const handleEmailChange = (e) => {
     e.preventDefault();
@@ -171,8 +105,7 @@ function UserSettings() {
                 <p>Details about your membership status:</p>
                 <p>Premium Plan: Active</p>
                 <p>Expiration Date: 12/12/2025</p>
-                <CheckoutButton onClick={handleCheckout} loading={loading} />
-                {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+                <UpgradeUser />
               </div>
             )}
 
