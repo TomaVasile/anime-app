@@ -37,10 +37,8 @@ const UpgradeUser = () => {
         },
         body: JSON.stringify({
           priceId,
-          metadata: {
-            userId: userId, 
-          },
-        }),
+          userId 
+        }),        
       });
 
       if (!response.ok) {

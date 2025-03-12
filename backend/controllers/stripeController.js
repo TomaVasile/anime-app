@@ -2,6 +2,7 @@ const { createSession, processWebhook } = require('../services/stripeService');
 
 const createCheckoutSession = async (req, res) => {
     try {
+        console.log('Body primit:', req.body);
         const { userId, priceId } = req.body;
         if (!userId || !priceId) {
             return res.status(400).json({ error: 'userId și priceId sunt necesare' });

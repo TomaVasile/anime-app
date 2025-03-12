@@ -33,22 +33,22 @@ const UserMenu = () => {
 
         if (data.avatar) {
           
-          setUserAvatar(`https://anime-fox.netlify.app/user-avatar/${data.avatar}`);
+          setUserAvatar(`/user-avatar/${data.avatar}`);
           localStorage.setItem("avatarUrl", data.avatar);
         } else {
      
-          setUserAvatar("https://anime-fox.netlify.app/user-avatar/avatar.jpg");
+          setUserAvatar("/user-avatar/avatar.jpg");
         }
       } catch (error) {
         console.error("Error fetching avatar:", error);
 
-        setUserAvatar("https://anime-fox.netlify.app/user-avatar/avatar.jpg");
+        setUserAvatar("/user-avatar/avatar.jpg");
       }
     };
 
     const avatar = localStorage.getItem("avatarUrl");
     if (avatar) {
-      setUserAvatar(`https://anime-fox.netlify.app/${avatar}`);
+      setUserAvatar(`/user-avatar/${avatar}`);
     } else {
       fetchAvatar(); 
     }
