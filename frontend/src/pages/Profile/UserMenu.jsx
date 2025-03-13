@@ -34,8 +34,7 @@ const UserMenu = () => {
         if (data.avatar) {
           let avatarPath = data.avatar;
     
-          // Dacă avatarul NU este un URL complet, adaugă prefixul
-          if (!avatarPath.startsWith("http")) {
+          if (!avatarPath.startsWith("http") && !avatarPath.startsWith("/user-avatar/")) {
             avatarPath = `/user-avatar/${avatarPath}`;
           }
     
@@ -48,7 +47,7 @@ const UserMenu = () => {
         console.error("Error fetching avatar:", error);
         setUserAvatar("/user-avatar/avatar.jpg");
       }
-    };
+    };    
 
     const avatar = localStorage.getItem("avatarUrl");
     if (avatar) {
