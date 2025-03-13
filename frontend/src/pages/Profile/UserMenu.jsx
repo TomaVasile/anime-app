@@ -18,45 +18,47 @@ const UserMenu = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    setIsLoggedIn(!!token); 
-
+    setIsLoggedIn(!!token);
+  
     const fetchAvatar = async () => {
       const userId = localStorage.getItem("userId");
       if (!userId) return;
-    
+  
       try {
         const response = await fetch(`https://anime-app-bkmg.onrender.com/api/user/${userId}`);
         if (!response.ok) throw new Error("Failed to fetch avatar");
-    
+  
         const data = await response.json();
         console.log("Avatar primit de la API:", data.avatar);
-    
-        if (data.avatar) {
-          let avatarPath = data.avatar;
-    
-          if (
-            !avatarPath.startsWith("http") && 
-            !avatarPath.startsWith("/user-avatar/")
-          ) {
-            avatarPath = `/user-avatar/${avatarPath}`;
-          }
-    
-          setUserAvatar(avatarPath);
-          localStorage.setItem("avatarUrl", avatarPath);
-        } else {
-          setUserAvatar("/user-avatar/avatar.jpg");
+  
+        let avatarPath = data.avatar;
+  
+        if (!avatarPath) {
+          avatarPath = "https://anime-fox.netlify.app/user-avatar/avatar.jpg";
+        } else if (!avatarPath.startsWith("http")) {
+          avatarPath = `https://anime-fox.netlify.app${avatarPath}`;
         }
+  
+        console.log("Avatar final setat:", avatarPath);
+        setUserAvatar(avatarPath);
+        localStorage.setItem("avatarUrl", avatarPath);
       } catch (error) {
         console.error("Error fetching avatar:", error);
-        setUserAvatar("/user-avatar/avatar.jpg");
+        setUserAvatar("https://anime-fox.netlify.app/user-avatar/avatar.jpg");
       }
-    };   
-
+    };
+  
     const avatar = localStorage.getItem("avatarUrl");
+  
     if (avatar) {
-      setUserAvatar(`/user-avatar/${avatar}`);
+
+      if (!avatar.startsWith("http")) {
+        setUserAvatar(`https://anime-fox.netlify.app${avatar}`);
+      } else {
+        setUserAvatar(avatar);
+      }
     } else {
-      fetchAvatar(); 
+      fetchAvatar();
     }
   }, []);
 
