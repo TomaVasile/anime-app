@@ -23,25 +23,29 @@ const UserMenu = () => {
     const fetchAvatar = async () => {
       const userId = localStorage.getItem("userId");
       if (!userId) return;
-
+    
       try {
         const response = await fetch(`https://anime-app-bkmg.onrender.com/api/user/${userId}`);
         if (!response.ok) throw new Error("Failed to fetch avatar");
-
+    
         const data = await response.json();
         console.log('Fetched Avatar Data:', data);
-
+    
         if (data.avatar) {
-          
-          setUserAvatar(`/user-avatar/${data.avatar}`);
-          localStorage.setItem("avatarUrl", data.avatar);
+          let avatarPath = data.avatar;
+    
+          // Dacă avatarul NU este un URL complet, adaugă prefixul
+          if (!avatarPath.startsWith("http")) {
+            avatarPath = `/user-avatar/${avatarPath}`;
+          }
+    
+          setUserAvatar(avatarPath);
+          localStorage.setItem("avatarUrl", avatarPath);
         } else {
-     
           setUserAvatar("/user-avatar/avatar.jpg");
         }
       } catch (error) {
         console.error("Error fetching avatar:", error);
-
         setUserAvatar("/user-avatar/avatar.jpg");
       }
     };
