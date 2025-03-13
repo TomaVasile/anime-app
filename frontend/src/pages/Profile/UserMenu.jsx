@@ -29,12 +29,15 @@ const UserMenu = () => {
         if (!response.ok) throw new Error("Failed to fetch avatar");
     
         const data = await response.json();
-        console.log('Fetched Avatar Data:', data);
+        console.log("Avatar primit de la API:", data.avatar);
     
         if (data.avatar) {
           let avatarPath = data.avatar;
     
-          if (!avatarPath.startsWith("http") && !avatarPath.startsWith("/user-avatar/")) {
+          if (
+            !avatarPath.startsWith("http") && 
+            !avatarPath.startsWith("/user-avatar/")
+          ) {
             avatarPath = `/user-avatar/${avatarPath}`;
           }
     
@@ -47,7 +50,7 @@ const UserMenu = () => {
         console.error("Error fetching avatar:", error);
         setUserAvatar("/user-avatar/avatar.jpg");
       }
-    };    
+    };   
 
     const avatar = localStorage.getItem("avatarUrl");
     if (avatar) {
